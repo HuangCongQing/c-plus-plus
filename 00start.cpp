@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Date: 2019-12-17 23:48:44
  * @LastEditors: HCQ
- * @LastEditTime: 2019-12-17 23:49:53
+ * @LastEditTime: 2020-06-02 18:22:38
  */
 #include <iostream>
 using namespace std;
@@ -13,7 +13,8 @@ using namespace std;
  
 int main()
 {
+   int a = 0;
+   cout << "0" <<endl; // 输出 Hello World
    cout << "Hello World"; // 输出 Hello World
    return 0;
 }
-
