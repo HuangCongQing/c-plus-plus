@@ -15,13 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="源.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="1.jpg">
+    <Image Include="..\..\..\..\00研究生\00春夏季课程\计算机视觉\homeworks\Harris\Harris.png">
       <Filter>源文件</Filter>
     </Image>
+    <Image Include="..\..\..\..\00研究生\00春夏季课程\计算机视觉\ConsoleApplication2\ConsoleApplication2\test1.jpg">
+      <Filter>源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\00研究生\00春夏季课程\计算机视觉\ConsoleApplication2\ConsoleApplication2\meanFilter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
