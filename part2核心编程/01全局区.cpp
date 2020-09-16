@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Date: 2020-06-10 10:22:47
  * @LastEditors: HCQ
- * @LastEditTime: 2020-06-10 11:00:35
+ * @LastEditTime: 2020-09-16 16:41:37
  */ 
 #include <iostream>
 using namespace std;
@@ -18,7 +18,7 @@ const int c_g_b = 10;
 
 int main()
 {
-    //局部变量
+    //局部变量（在函数体内的（比如main函数）
     int a = 10;
     int b = 10;
     //打印地址
