@@ -4,17 +4,24 @@
  * @Company(School): UCAS
  * @Date: 2019-12-17 23:38:10
  * @LastEditors: HCQ
- * @LastEditTime: 2020-06-10 09:18:18
+ * @LastEditTime: 2020-09-16 15:18:27
  -->
 # c-plus-plus
 C++
 
+* 个人笔记：https://www.yuque.com/huangzhongqing/lang/qgf9th
+* 运行del.bat，可删除无用文件
+
 ### Tutorial
+
+* 文档：https://www.runoob.com/cplusplus/cpp-tutorial.html
+
+#### 黑马程序员-c++教程
 
 * 视频教程：https://www.bilibili.com/video/av41559729/
 * 代码：https://github.com/AnkerLeng/Cpp-0-1-Resource
 
-* 文档：https://www.runoob.com/cplusplus/cpp-tutorial.html
+
 
 面向对象程序设计
 C++ 完全支持面向对象的程序设计，包括面向对象开发的四大特性：
