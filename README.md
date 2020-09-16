@@ -4,10 +4,10 @@
  * @Company(School): UCAS
  * @Date: 2019-12-17 23:38:10
  * @LastEditors: HCQ
- * @LastEditTime: 2020-09-16 15:18:27
+ * @LastEditTime: 2020-09-16 18:19:11
  -->
 # c-plus-plus
-C++
+C++  个人用的VScode编辑器
 
 * 个人笔记：https://www.yuque.com/huangzhongqing/lang/qgf9th
 * 运行del.bat，可删除无用文件
