@@ -19,6 +19,7 @@ void test01()
     Person p;
     ifs.read((char *)&p, sizeof(p));
     cout << "姓名： " << p.m_Name << " 年龄： " << p.m_Age << endl;
+    ifs.close();
 }
 int main()
 {
