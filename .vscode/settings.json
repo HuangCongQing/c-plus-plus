@@ -58,5 +58,6 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp"
-    }, // 格式化时调整include的顺序（按字母排序）
+    },
+    "terminal.integrated.shell.linux": "/bin/zsh", // 格式化时调整include的顺序（按字母排序）
 }
