@@ -6,8 +6,8 @@
             "args": [
                 "-g",  // 生成和调试有关的信息
                 "${file}",
-                "-o", // 指定输出文件名，不加该参数则默认输出a.exe，Linux下默认a.out
-                "${fileDirname}/${fileBasenameNoExtension}.exe"
+                // "-o", // 指定输出文件名，不加该参数则默认输出a.exe，Linux下默认a.out
+                // "${fileDirname}/${fileBasenameNoExtension}.exe"
             ],
             "problemMatcher": {
                 "owner": "cpp",
