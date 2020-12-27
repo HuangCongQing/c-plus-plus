@@ -4,8 +4,8 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2020-12-27 16:27:04
- * @LastEditTime: 2020-12-27 16:30:50
- * @FilePath: /c-plus-plus/Eigen/bili1常用自带函数.cpp
+ * @LastEditTime: 2020-12-27 16:47:43
+ * @FilePath: /c-plus-plus/Eigen/bili2常用自带函数.cpp
  */
 
 /*
@@ -36,5 +36,13 @@ int main(int argc, char *argv[]){
     std::cout<<mat2<<endl;
     std::cout<<mat3<<endl;
     std::cout<<mat4<<endl;
+    // 矩阵维度不同
+    MatrixXd a(2,2); //22
+    MatrixXd b(3,3);//33
+    cout<<a.rows()<<a.cols()<<endl;
+    a=b;
+    cout<<a.rows()<<a.cols()<<endl;
+
+    
     return 0;
 }
