@@ -1,13 +1,13 @@
 {
     "version": "2.0.0",
     "tasks": [{
-            "label": "compile",
-            "command": "g++",
+            "label": "compile", // 任务名称，与launch.json的preLaunchTask相对应
+            "command": "g++", // 要使用的编译器，C++用g++
             "args": [
-                "-g",
+                "-g",  // 生成和调试有关的信息
                 "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "-o", // 指定输出文件名，不加该参数则默认输出a.exe，Linux下默认a.out
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
             ],
             "problemMatcher": {
                 "owner": "cpp",

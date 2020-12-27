@@ -12,7 +12,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "preLaunchTask": "compile",
+            "preLaunchTask": "compile",  // 任务名称，与task.json的"label": "compile"相对应
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
