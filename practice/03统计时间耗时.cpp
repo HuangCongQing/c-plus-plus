@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-03-04 14:18:29
- * @LastEditTime: 2021-03-04 14:47:10
+ * @LastEditTime: 2021-03-04 14:49:43
  * @FilePath: /c-plus-plus/practice/03统计时间耗时.cpp
  */
 
@@ -23,13 +23,12 @@ int main()
    }
    
    auto t2 = std::chrono::steady_clock::now();
-//  static double to_dr_ms = 0.0;
+ static double to_dr_ms = 0.0;
   double dr_ms=std::chrono::duration<double,std::milli>(t2-t1).count();   //这一帧处理时间  毫秒ms
-//   to_dr_ms += dr_ms;   // 总时间
-//   std::cout<<"## Extract ground time: "<<dr_ms<<" ms"<<std::endl;
+  to_dr_ms += dr_ms;   // 总时间
+  std::cout<<"## Extract ground time: "<<dr_ms<<" ms"<<std::endl;
+  std::cout<<"## 总时间 "<<to_dr_ms<<" ms"<<std::endl;
 
-  //double clustering_time = (ros::Time::now() - begin_time).toSec();
-  cout<<dr_ms<<endl;
 
 
 // auto start = system_clock::now();
