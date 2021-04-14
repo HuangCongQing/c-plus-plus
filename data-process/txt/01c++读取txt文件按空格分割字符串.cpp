@@ -1,10 +1,10 @@
 /*
- * @Description: 读取txt文件
+ * @Description: 读取txt文件 参考：https://blog.csdn.net/weixin_42915431/article/details/107893794
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-04-14 15:47:24
- * @LastEditTime: 2021-04-14 15:49:09
+ * @LastEditTime: 2021-04-14 16:08:41
  * @FilePath: /c-plus-plus/data-process/txt/01c++读取txt文件按空格分割字符串.cpp
  */
 #include<iostream>  
