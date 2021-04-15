@@ -1,1 +1,0 @@
-cout<<"行数"<<lineCnt+1<<endl;
