@@ -1,15 +1,19 @@
 /*
- * @Description: 双线程时间同步
+ * @Description: 双线程时间同步  https://www.shuangyi-tech.com/news_188.html
+ 运行命令:cd "/home/hcq/github/c-plus-plus/practice/01时间同步/" && g++ 01time_sync.cpp -o 01time_sync -pthread && "/home/hcq/github/c-plus-plus/practice/01时间同步/"01time_sync
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-04-15 10:56:25
- * @LastEditTime: 2021-04-15 10:57:56
+ * @LastEditTime: 2021-04-15 11:05:22
  * @FilePath: /c-plus-plus/practice/01时间同步/01time_sync.cpp
  */
 
 #include <iostream>
 #include <thread>
+#include <mutex>
+#include <vector>
+#include <condition_variable>
 
 using namespace std;
 

@@ -55,6 +55,7 @@
         "cfenv": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "condition_variable": "cpp"
     }
 }
