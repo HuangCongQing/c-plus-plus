@@ -6,7 +6,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-04-14 15:57:16
- * @LastEditTime: 2021-04-16 12:56:40
+ * @LastEditTime: 2021-04-16 13:04:19
  * @FilePath: /c-plus-plus/data-process/txt/02读取txt文件逗号分隔.cpp
  */
 
@@ -28,18 +28,19 @@ int main()
     while (getline(in_file, str_line, '\n')) // 得到每行数据
     {
         string str_tmp;
-        // cout << str_line << endl; //每行数据
-        lineCnt++; // 行数
+        cout << str_line << endl; //每行数据
+        lineCnt++;                // 行数
         string str = str_line;
         for (int j = 0; j < 2; j++)
         {
-            int pos = str.find(",");          //寻找,的位置
+            int pos = str.find(",");           //寻找,的位置(也是截取的位数)
+            cout << "pos:" << pos << endl;     //每行数据
             string point = str.substr(0, pos); //提取数字字符串
             // pt[j] = atoi(point.data());        //将提取出来的字符串转换成数字
-            pt[j] = atof(point.data());        //将提取出来的字符串转换成double数字
-            str.erase(0, pos + 2);             //消除已经分隔的字符串，方便后续操作的分割
+            pt[j] = atof(point.data()); //将提取出来的字符串转换成double数字
+            str.erase(0, pos + 1);      //消除已经分隔的字符串(消除逗号,如果逗号后面有空格,消除2位))
         }
-        cout << setprecision(18)<<pt[0] << ", " << pt[1] << endl; // 
+        cout << setprecision(18) << pt[0] << ", " << pt[1] << endl; //
     }
     cout << "行数" << lineCnt + 1 << endl;
 
