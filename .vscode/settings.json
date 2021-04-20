@@ -57,6 +57,7 @@
         "typeinfo": "cpp",
         "list": "cpp",
         "condition_variable": "cpp",
-        "mutex": "cpp"
+        "mutex": "cpp",
+        "numeric": "cpp"
     }
 }
