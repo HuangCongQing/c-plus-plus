@@ -4,8 +4,8 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-04-17 14:38:10
- * @LastEditTime: 2021-04-18 12:38:48
- * @FilePath: /c-plus-plus/Part3C++提高编程_泛化编程_STL/03STL-常用容器/3.1string/01 list容器_构造函数.cpp
+ * @LastEditTime: 2021-04-20 18:17:09
+ * @FilePath: /c-plus-plus/Part3C++提高编程_泛化编程_STL/03STL-常用容器/3.1string/01list容器_构造函数.cpp
  */
 #include<iostream>
 using namespace std;
@@ -44,7 +44,7 @@ void test01()
 	printList(L3);
 
 	//n个elem
-	list<int>L4(10, 1000);
+	list<int>L4(10, 1000);  // 10个1000
 	printList(L4);
 }
 
