@@ -1,11 +1,11 @@
 /*
- * @Description: 
+ * @Description:  L1.empty(), L1.resize(), L1.size()
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-04-18 12:39:33
- * @LastEditTime: 2021-04-20 18:20:54
- * @FilePath: /c-plus-plus/Part3C++提高编程_泛化编程_STL/03STL-常用容器/3.1string/03 list容器_大小操作.cpp
+ * @LastEditTime: 2021-04-20 18:25:10
+ * @FilePath: /c-plus-plus/Part3C++提高编程_泛化编程_STL/03STL-常用容器/3.1string/03list容器_大小操作.cpp
  */
 #include<iostream>
 using namespace std;
@@ -30,7 +30,7 @@ void test01()
 	L1.push_back(30);
 	L1.push_back(40);
 
-	printList(L1);
+	printList(L1);  // 10 20 30 40 
 
 	//判断容器是否为空
 	if (L1.empty())
@@ -40,15 +40,15 @@ void test01()
 	else
 	{
 		cout << "L1不为空" << endl;
-		cout << "L1的元素个数为： " << L1.size() << endl;
+		cout << "L1的元素个数为： " << L1.size() << endl; // L1的元素个数为： 4
 	}
 
 	//重新指定大小
 	L1.resize(10, 10000);
-	printList(L1);
+	printList(L1);  // 10 20 30 40 10000 10000 10000 10000 10000 10000
 
 	L1.resize(2);
-	printList(L1);
+	printList(L1);  // 10 20 
 
 }
 
