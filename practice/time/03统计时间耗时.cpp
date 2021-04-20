@@ -4,13 +4,13 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-03-04 14:18:29
- * @LastEditTime: 2021-04-20 10:24:47
+ * @LastEditTime: 2021-04-20 10:36:38
  * @FilePath: /c-plus-plus/practice/03统计时间耗时.cpp
  */
 
 #include<iostream>  
-#include <chrono>     // 时间must
 using namespace std;
+#include <chrono>     // 时间must
 using namespace chrono;// 时间must
 // main() 是程序开始执行的地方
  
@@ -47,7 +47,7 @@ int main()
    // double local_time = std::chrono::duration<double,std::milli>t1.count();
   std::cout<<"## 当前时间: " <<nowTime<<" ms"<<std::endl;
 
-
+/
 
    return 0;
 }
