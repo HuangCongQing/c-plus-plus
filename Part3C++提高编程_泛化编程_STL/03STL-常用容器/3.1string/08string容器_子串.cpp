@@ -4,8 +4,8 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-05-11 15:02:08
- * @LastEditTime: 2021-05-11 15:02:58
- * @FilePath: /c-plus-plus/Part3C++提高编程_泛化编程_STL/03STL-常用容器/3.1string/08 string容器_子串.cpp
+ * @LastEditTime: 2021-05-11 15:40:53
+ * @FilePath: /c-plus-plus/Part3C++提高编程_泛化编程_STL/03STL-常用容器/3.1string/08string容器_子串.cpp
  */
 #include<iostream>
 using namespace std;
@@ -17,7 +17,7 @@ void test01()
 {
 	string str = "abcdef";
 
-	string subStr = str.substr(1, 3);
+	string subStr = str.substr(1, 3); // 包含3
 
 	cout << "subStr = " << subStr << endl;
 }
@@ -39,7 +39,7 @@ void test02()
 
 int main() {
 
-	//test01();
+	test01();
 
 	test02();
 	system("pause");
