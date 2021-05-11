@@ -4,14 +4,14 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-03-04 14:18:29
- * @LastEditTime: 2021-03-04 14:49:43
+ * @LastEditTime: 2021-04-20 10:36:38
  * @FilePath: /c-plus-plus/practice/03统计时间耗时.cpp
  */
 
 #include<iostream>  
-#include <chrono>     // must
 using namespace std;
-using namespace chrono;// must
+#include <chrono>     // 时间must
+using namespace chrono;// 时间must
 // main() 是程序开始执行的地方
  
 int main()
@@ -30,7 +30,6 @@ int main()
   std::cout<<"## 总时间 "<<to_dr_ms<<" ms"<<std::endl;
 
 
-
 // auto start = system_clock::now();
 // // do something...
 // auto end   = system_clock::now();
@@ -38,5 +37,17 @@ int main()
 // cout <<  "花费了" 
 //      << double(duration.count()) * microseconds::period::num / microseconds::period::den 
 //      << "秒" << endl;
+
+
+
+// 获取当前时间
+
+   chrono::system_clock::time_point now = chrono::system_clock::now();//当前时间time_point格式
+   std::time_t nowTime = chrono::system_clock::to_time_t(now);//转换为 std::time_t 格式 
+   // double local_time = std::chrono::duration<double,std::milli>t1.count();
+  std::cout<<"## 当前时间: " <<nowTime<<" ms"<<std::endl;
+
+/
+
    return 0;
 }
