@@ -1,13 +1,19 @@
 #include<iostream>
 using namespace std;
 #include <map>
+/* 
+//创建map容器
+map<int, int> m;
+
+
+ */
 
 //map容器 构造和赋值
 void printMap(map<int, int>&m)
 {
 	for (map<int, int>::iterator it = m.begin(); it != m.end(); it++)
 	{
-		cout << "key = " << (*it).first << " value = " << it->second << endl;
+		cout << "key = " << (*it).first << " value = " << it->second << endl;  // 输出first second
 	}
 	cout << endl;
 }
@@ -17,7 +23,7 @@ void test01()
 	//创建map容器
 	map<int, int> m;
 
-	m.insert(pair<int, int>(1, 10));
+	m.insert(pair<int, int>(1, 10));  // 插入pair
 	m.insert(pair<int, int>(3, 30));
 	m.insert(pair<int, int>(2, 20));
 	m.insert(pair<int, int>(4, 40));
