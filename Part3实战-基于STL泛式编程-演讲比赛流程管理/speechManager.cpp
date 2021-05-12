@@ -1,6 +1,6 @@
 #include "speechManager.h"
 
-//构造函数
+//构造函数=====================
 SpeechManager::SpeechManager()
 {
 	//初始化容器和属性
@@ -406,7 +406,7 @@ void SpeechManager::clearRecord()
 	system("cls");
 }
 
-//析构函数
+//析构函数===================
 SpeechManager::~SpeechManager()
 {
 

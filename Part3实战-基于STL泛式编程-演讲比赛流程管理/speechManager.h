@@ -4,10 +4,10 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-05-11 16:05:00
- * @LastEditTime: 2021-05-11 16:06:41
+ * @LastEditTime: 2021-05-13 00:28:23
  * @FilePath: /c-plus-plus/Cpp-0-1-Resource/第6阶段实战-基于STL泛化编程的演讲比赛资料/资料/代码/基于STL的演讲比赛流程管理系统/╗∙╙┌STL╡─╤▌╜▓▒╚╚ⁿ┴≈│╠╣▄└φ╧╡═│/╗∙╙┌STL╡─╤▌╜▓▒╚╚ⁿ┴≈│╠╣▄└φ╧╡═│/speechManager.h
  */
-#pragma once 
+#pragma once // 防止头文件重复编译
 #include <iostream>
 using namespace std;
 #include <vector>
@@ -26,7 +26,7 @@ class SpeechManager
 {
 public:
 
-	//构造函数
+	//构造函数---------
 	SpeechManager();
 
 	//菜单功能
@@ -35,7 +35,7 @@ public:
 	//退出系统
 	void exitSystem();
 
-	//析构函数
+	//析构函数---------
 	~SpeechManager();
 
 	//初始化容器和属性
