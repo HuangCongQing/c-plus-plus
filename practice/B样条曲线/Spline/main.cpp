@@ -7,9 +7,9 @@ using namespace SplineSpace;
 
 int main(void)
 {
-	//Òì³£Å×³ö²âÊÔ
+	//å¼‚å¸¸æŠ›å‡ºæµ‹è¯•
 		
-	//double x0[2]={1,2};		//ÒÑÖªµÄÊı¾İµã
+	//double x0[2]={1,2};		//å·²çŸ¥çš„æ•°æ®ç‚¹
 	//double y0[2]={3,4};
 	//try
 	//{
@@ -19,63 +19,63 @@ int main(void)
 	//{
 	//	cout<<sf.GetMessage()<<endl;
 	//}
-	//getchar();		//³ÌĞòÔİÍ£
+	//getchar();		//ç¨‹åºæš‚åœ
 
-	//µ¥µã²åÖµ²âÊÔ
+	//å•ç‚¹æ’å€¼æµ‹è¯•
 
-	//double x0[5]={1,2,4,5,6};		//ÒÑÖªµÄÊı¾İµã
+	//double x0[5]={1,2,4,5,6};		//å·²çŸ¥çš„æ•°æ®ç‚¹
 	//double y0[5]={1,3,4,2,5};
 	//try
 	//{
 	//	//Spline sp(x0,y0,5,GivenSecondOrder,0,0);
-	//	SplineInterface* sp = new Spline(x0,y0,5);	//Ê¹ÓÃ½Ó¿Ú£¬ÇÒÊ¹ÓÃÄ¬ÈÏ±ß½çÌõ¼ş
+	//	SplineInterface* sp = new Spline(x0,y0,5);	//ä½¿ç”¨æ¥å£ï¼Œä¸”ä½¿ç”¨é»˜è®¤è¾¹ç•Œæ¡ä»¶
 	//	double x=4.5;
 	//	double y;
-	//	sp->SinglePointInterp(x,y);	//ÇóxµÄ²åÖµ½á¹ûy
-	//	cout<<"x="<<x<<"Ê±µÄ²åÖµ½á¹ûÎª:"<<y<<endl;
+	//	sp->SinglePointInterp(x,y);	//æ±‚xçš„æ’å€¼ç»“æœy
+	//	cout<<"x="<<x<<"æ—¶çš„æ’å€¼ç»“æœä¸º:"<<y<<endl;
 	//}
 	//catch(SplineFailure sf)
 	//{
 	//	cout<<sf.GetMessage()<<endl;
 	//}
-	//getchar();	//³ÌĞòÔİÍ£
+	//getchar();	//ç¨‹åºæš‚åœ
 
-	//¶àµã²åÖµ²âÊÔ
+	//å¤šç‚¹æ’å€¼æµ‹è¯•
 
-	double x0[5]={1,2,4,5,6};		//ÒÑÖªµÄÊı¾İµã
+	double x0[5]={1,2,4,5,6};		//å·²çŸ¥çš„æ•°æ®ç‚¹
 	double y0[5]={1,3,4,2,5};
 
-	double x[4] = {1.5,2.5,3.5,4.5};	//²åÖµµã
+	double x[4] = {1.5,2.5,3.5,4.5};	//æ’å€¼ç‚¹
 	double y[4];
-	double leftBound=0,RightBound=0;	//±ß½çµ¼Êı
+	double leftBound=0,RightBound=0;	//è¾¹ç•Œå¯¼æ•°
 
 	try
 	{
 		Spline sp(x0,y0,5,GivenSecondOrder,leftBound,RightBound);
-		sp.MultiPointInterp(x,4,y);			//ÇóxµÄ²åÖµ½á¹ûy
+		sp.MultiPointInterp(x,4,y);			//æ±‚xçš„æ’å€¼ç»“æœy
 		for(int i = 0;i < 4;i++)
 		{
-			cout<<"x="<<x[i]<<"Ê±µÄ²åÖµ½á¹ûÎª:"<<y[i]<<endl;
+			cout<<"x="<<x[i]<<"æ—¶çš„æ’å€¼ç»“æœä¸º:"<<y[i]<<endl;
 		}
 	}
 	catch(SplineFailure sf)
 	{
 		cout<<sf.GetMessage()<<endl;
 	}
-	getchar();	//³ÌĞòÔİÍ£
+	getchar();	//ç¨‹åºæš‚åœ
 
-	// ×Ô¶¯²åÖµ²âÊÔ
+	// è‡ªåŠ¨æ’å€¼æµ‹è¯•
 
-	// double x0[5]={1,2,4,5,6};		//ÒÑÖªµÄÊı¾İµã
+	// double x0[5]={1,2,4,5,6};		//å·²çŸ¥çš„æ•°æ®ç‚¹
 	// double y0[5]={1,3,4,2,5};
 
-	// double x[10];	//²åÖµµã
+	// double x[10];	//æ’å€¼ç‚¹
 	// double y[10];
 
 	// try
 	// {
-		// SplineInterface* sp = new Spline(x0,y0,5);	//Ê¹ÓÃ½Ó¿Ú£¬ÇÒÊ¹ÓÃÄ¬ÈÏ±ß½çÌõ¼ş
-		// sp->AutoInterp(10,x,y);			//ÇóxµÄ²åÖµ½á¹ûy
+		// SplineInterface* sp = new Spline(x0,y0,5);	//ä½¿ç”¨æ¥å£ï¼Œä¸”ä½¿ç”¨é»˜è®¤è¾¹ç•Œæ¡ä»¶
+		// sp->AutoInterp(10,x,y);			//æ±‚xçš„æ’å€¼ç»“æœy
 
 		// for(int i = 0;i < 10;i++)
 			// cout<<x[i]<<",";
@@ -87,5 +87,5 @@ int main(void)
 	// {
 		// cout<<sf.GetMessage()<<endl;
 	// }
-	// getchar();	//³ÌĞòÔİÍ£
+	// getchar();	//ç¨‹åºæš‚åœ
 }

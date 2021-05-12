@@ -7,36 +7,36 @@ using namespace std;
 namespace SplineSpace
 {
 
-	//¹¹Ôìº¯Êı
+	//æ„é€ å‡½æ•°
 	Spline::Spline(const double* x0,const double* y0,const int& num,
 				BoundaryCondition bc,const double& leftBoundary,const double& rightBoundary)
 				:GivenX(x0),GivenY(y0),GivenNum(num),Bc(bc),LeftB(leftBoundary),RightB(rightBoundary)
 	{
 		if((x0==NULL)|(y0==NULL)|(num<3))
 		{
-				throw SplineFailure("¹¹ÔìÊ§°Ü,ÒÑÖªµãÊı¹ıÉÙ");
+				throw SplineFailure("æ„é€ å¤±è´¥,å·²çŸ¥ç‚¹æ•°è¿‡å°‘");
 		}
-		PartialDerivative = new double[GivenNum];	//¸øÆ«µ¼·ÖÅä¿Õ¼ä
+		PartialDerivative = new double[GivenNum];	//ç»™åå¯¼åˆ†é…ç©ºé—´
 		MaxX = *max_element(GivenX,GivenX+GivenNum);
 		MinX = *min_element(GivenX,GivenX+GivenNum);
-		if(Bc==GivenFirstOrder)		//IĞÍ±ß½çÌõ¼ş
+		if(Bc==GivenFirstOrder)		//Iå‹è¾¹ç•Œæ¡ä»¶
 			PartialDerivative1();
-		else if(Bc == GivenSecondOrder)		//IIĞÍ±ß½çÌõ¼ş
+		else if(Bc == GivenSecondOrder)		//IIå‹è¾¹ç•Œæ¡ä»¶
 			PartialDerivative2();
 		else
 		{
 			delete[] PartialDerivative;
-			throw SplineFailure("±ß½çÌõ¼ş²ÎÊı´íÎó");
+			throw SplineFailure("è¾¹ç•Œæ¡ä»¶å‚æ•°é”™è¯¯");
 		}
 	}
 
-	//IĞÍ±ß½çÌõ¼şÇóÆ«µ¼
+	//Iå‹è¾¹ç•Œæ¡ä»¶æ±‚åå¯¼
 	void Spline::PartialDerivative1(void)
 	{
-//  ×·¸Ï·¨½â·½³ÌÇó¶ş½×Æ«µ¼Êı
-		double *a=new double[GivenNum];                //  a:Ï¡Êè¾ØÕó×îÏÂ±ßÒ»´®Êı
-		double *b=new double[GivenNum];                //  b:Ï¡Êè¾ØÕó×îÖĞ¼äÒ»´®Êı
-		double *c=new double[GivenNum];                //  c:Ï¡Êè¾ØÕó×îÉÏ±ßÒ»´®Êı
+//  è¿½èµ¶æ³•è§£æ–¹ç¨‹æ±‚äºŒé˜¶åå¯¼æ•°
+		double *a=new double[GivenNum];                //  a:ç¨€ç–çŸ©é˜µæœ€ä¸‹è¾¹ä¸€ä¸²æ•°
+		double *b=new double[GivenNum];                //  b:ç¨€ç–çŸ©é˜µæœ€ä¸­é—´ä¸€ä¸²æ•°
+		double *c=new double[GivenNum];                //  c:ç¨€ç–çŸ©é˜µæœ€ä¸Šè¾¹ä¸€ä¸²æ•°
 		double *d=new double[GivenNum];
 
 		double *f=new double[GivenNum];
@@ -46,8 +46,8 @@ namespace SplineSpace
 
 		double *h=new double[GivenNum];
 
-		for(int i=0;i<GivenNum;i++)  b[i]=2;          //  ÖĞ¼äÒ»´®ÊıÎª2
-		for(int i=0;i<GivenNum-1;i++)  h[i]=GivenX[i+1]-GivenX[i];                   // ¸÷¶Î²½³¤
+		for(int i=0;i<GivenNum;i++)  b[i]=2;          //  ä¸­é—´ä¸€ä¸²æ•°ä¸º2
+		for(int i=0;i<GivenNum-1;i++)  h[i]=GivenX[i+1]-GivenX[i];                   // å„æ®µæ­¥é•¿
 		for(int i=1;i<GivenNum-1;i++)  a[i]=h[i-1]/(h[i-1]+h[i]);            
 		a[GivenNum-1]=1;
 
@@ -62,7 +62,7 @@ namespace SplineSpace
 
 		for(int i=1;i<GivenNum-1;i++)  d[i]=6*(f[i]-f[i-1])/(h[i-1]+h[i]);
 
-		bt[0]=c[0]/b[0];                                             //  ×·¸Ï·¨Çó½â·½³Ì
+		bt[0]=c[0]/b[0];                                             //  è¿½èµ¶æ³•æ±‚è§£æ–¹ç¨‹
 		for(int i=1;i<GivenNum-1;i++)  bt[i]=c[i]/(b[i]-a[i]*bt[i-1]);
 
 		gm[0]=d[0]/b[0];
@@ -81,14 +81,14 @@ namespace SplineSpace
 		delete[] h;
 	}
 
-	//IIĞÍ±ß½çÌõ¼şÇóÆ«µ¼
+	//IIå‹è¾¹ç•Œæ¡ä»¶æ±‚åå¯¼
 	void Spline::PartialDerivative2(void)
 	{
-//  ×·¸Ï·¨½â·½³ÌÇó¶ş½×Æ«µ¼Êı
+//  è¿½èµ¶æ³•è§£æ–¹ç¨‹æ±‚äºŒé˜¶åå¯¼æ•°
 
-		double *a=new double[GivenNum];                //  a:Ï¡Êè¾ØÕó×îÏÂ±ßÒ»´®Êı
-		double *b=new double[GivenNum];                //  b:Ï¡Êè¾ØÕó×îÖĞ¼äÒ»´®Êı
-		double *c=new double[GivenNum];                //  c:Ï¡Êè¾ØÕó×îÉÏ±ßÒ»´®Êı
+		double *a=new double[GivenNum];                //  a:ç¨€ç–çŸ©é˜µæœ€ä¸‹è¾¹ä¸€ä¸²æ•°
+		double *b=new double[GivenNum];                //  b:ç¨€ç–çŸ©é˜µæœ€ä¸­é—´ä¸€ä¸²æ•°
+		double *c=new double[GivenNum];                //  c:ç¨€ç–çŸ©é˜µæœ€ä¸Šè¾¹ä¸€ä¸²æ•°
 		double *d=new double[GivenNum];
 
 		double *f=new double[GivenNum];
@@ -136,16 +136,16 @@ namespace SplineSpace
 		delete[] h;
 	}
 
-	//µ¥¸ö²åÖµµÄÊµÏÖ
+	//å•ä¸ªæ’å€¼çš„å®ç°
 	bool Spline::SinglePointInterp(const double& x,double& y)throw(SplineFailure)
 	{
 		if((x<MinX)|(x>MaxX))
-			throw SplineFailure("²»Ö§³ÖÍâ²åÖµ");
+			throw SplineFailure("ä¸æ”¯æŒå¤–æ’å€¼");
 		int klo,khi,k;
 		klo=0; khi=GivenNum-1;
 		double hh,bb,aa;
 
-		while(khi-klo>1)            //  ¶ş·Ö·¨²éÕÒxËùÔÚÇø¼ä¶Î
+		while(khi-klo>1)            //  äºŒåˆ†æ³•æŸ¥æ‰¾xæ‰€åœ¨åŒºé—´æ®µ
 		{
 			k=(khi+klo)>>1;
 			if(GivenX[k]>x)  khi=k;
@@ -160,7 +160,7 @@ namespace SplineSpace
 		return true;
 	}
 
-	//¶à¸ö²åÖµµÄÊµÏÖ
+	//å¤šä¸ªæ’å€¼çš„å®ç°
 	bool Spline::MultiPointInterp(const double* x,const int& num,double* y)throw(SplineFailure)
 	{
 		for(int i = 0;i < num;i++)
@@ -170,11 +170,11 @@ namespace SplineSpace
 		return true;
 	}
 
-	//×Ô¶¯¶à¸ö²åÖµµÄÊµÏÖ
+	//è‡ªåŠ¨å¤šä¸ªæ’å€¼çš„å®ç°
 	bool Spline::AutoInterp(const int& num,double* x,double* y)throw(SplineFailure)
 	{
 		if(num < 2)
-			throw SplineFailure("ÖÁÉÙÒªÊä³öÁ½¸öµã");
+			throw SplineFailure("è‡³å°‘è¦è¾“å‡ºä¸¤ä¸ªç‚¹");
 		double perStep = (MaxX-MinX)/(num-1);
 
 		for(int i = 0;i < num;i++)
@@ -190,7 +190,7 @@ namespace SplineSpace
 		delete[]  PartialDerivative;	
 	}
 
-//Òì³£ÀàÊµÏÖ
+//å¼‚å¸¸ç±»å®ç°
 	SplineFailure::SplineFailure(const char* msg):Message(msg){};
 	const char* SplineFailure::GetMessage(){return Message;}
 
