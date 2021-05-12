@@ -1,0 +1,12 @@
+# ÎÄ¼þÃû£º makefile1
+SHELL = cmd.exe
+
+OBJS = main.o Spline.o
+main: $(OBJS)
+	g++ -o main $(OBJS)
+main.o: main.cpp Spline.h
+	g++ -c main.cpp
+Spline.o: Spline.cpp SPline.h
+	g++ -c Spline.cpp
+clean:
+	del $(OBJS)
