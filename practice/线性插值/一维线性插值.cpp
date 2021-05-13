@@ -4,8 +4,24 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-05-13 09:57:15
- * @LastEditTime: 2021-05-13 09:59:09
+ * @LastEditTime: 2021-05-13 10:04:05
  * @FilePath: /c-plus-plus/practice/线性插值/一维线性插值.cpp
+ */
+
+/* 
+section: 1 2
+1
+1.1
+1.2
+1.3
+1.4
+1.5
+1.6
+1.7
+1.8
+1.9
+
+
  */
 
 #include <iostream>
