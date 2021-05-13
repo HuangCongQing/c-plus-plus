@@ -4,8 +4,8 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-05-11 16:05:00
- * @LastEditTime: 2021-05-13 00:28:23
- * @FilePath: /c-plus-plus/Cpp-0-1-Resource/第6阶段实战-基于STL泛化编程的演讲比赛资料/资料/代码/基于STL的演讲比赛流程管理系统/╗∙╙┌STL╡─╤▌╜▓▒╚╚ⁿ┴≈│╠╣▄└φ╧╡═│/╗∙╙┌STL╡─╤▌╜▓▒╚╚ⁿ┴≈│╠╣▄└φ╧╡═│/speechManager.h
+ * @LastEditTime: 2021-05-13 13:02:47
+ * @FilePath: /c-plus-plus/Part3实战-基于STL泛式编程-演讲比赛流程管理/speechManager.h
  */
 #pragma once // 防止头文件重复编译
 #include <iostream>
@@ -29,14 +29,14 @@ public:
 	//构造函数---------
 	SpeechManager();
 
+	//析构函数---------
+	~SpeechManager();
+
 	//菜单功能
 	void show_Menu();
 
 	//退出系统
 	void exitSystem();
-
-	//析构函数---------
-	~SpeechManager();
 
 	//初始化容器和属性
 	void initSpeech();
@@ -86,7 +86,7 @@ public:
 	vector<int>vVictory;
 
 	//存放编号以及对应具体选手容器
-	map<int, Speaker>m_Speaker;
+	map<int, Speaker>m_Speaker;   // class Speaker选手类   #include "speaker.h"
 
 	//存放比赛轮数 
 	int m_Index;

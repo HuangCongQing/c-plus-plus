@@ -4,8 +4,8 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-05-11 16:05:00
- * @LastEditTime: 2021-05-13 00:20:05
- * @FilePath: /c-plus-plus/Cpp-0-1-Resource/第6阶段实战-基于STL泛化编程的演讲比赛资料/资料/代码/基于STL的演讲比赛流程管理系统/演讲比赛流程管理系统.cpp
+ * @LastEditTime: 2021-05-13 12:46:30
+ * @FilePath: /c-plus-plus/Part3实战-基于STL泛式编程-演讲比赛流程管理/演讲比赛流程管理系统.cpp
  */
 
 #include <iostream>
@@ -17,7 +17,8 @@ int main()
 {
 	//随机数种子
 	srand((unsigned int)time(NULL));
-	//创建管理类对象
+	
+	//创建管理类对象====================================
 	SpeechManager sm;
 
 	//测试12名选手创建

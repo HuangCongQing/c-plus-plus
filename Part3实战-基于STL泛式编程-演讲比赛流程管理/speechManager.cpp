@@ -1,6 +1,9 @@
 #include "speechManager.h"
 
 //构造函数=====================
+// 默认的构造函数没有任何参数，但如果需要，构造函数也可以带有参数。这样在创建对象时就会给对象赋初始值
+// 构造函数的形式如下：带有一个和类成员同名的参数。
+// 构造函数不需要用户来调用它，而是建立对象时自动执行。
 SpeechManager::SpeechManager()
 {
 	//初始化容器和属性
@@ -13,6 +16,11 @@ SpeechManager::SpeechManager()
 	this->loadRecord();
 }
 
+//析构函数===================
+SpeechManager::~SpeechManager()
+{
+
+}
 //菜单功能
 void SpeechManager::show_Menu()
 {
@@ -31,7 +39,7 @@ void SpeechManager::exitSystem()
 {
 	cout << "欢迎下次使用" << endl;
 	system("pause");
-	exit(0);
+	exit(0); // 退出
 }
 
 void SpeechManager::initSpeech()
@@ -406,8 +414,3 @@ void SpeechManager::clearRecord()
 	system("cls");
 }
 
-//析构函数===================
-SpeechManager::~SpeechManager()
-{
-
-}
