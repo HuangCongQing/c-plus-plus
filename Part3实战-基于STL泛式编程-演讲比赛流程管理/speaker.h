@@ -15,7 +15,7 @@ using namespace std;
 class Speaker
 {
 public:
-
+	// 只有成员属性
 	string m_Name;    //姓名
-	double m_Score[2]; //分数  最多有两轮得分
+	double m_Score[2]; //分数  数组，因为最多有两轮得分
 };
