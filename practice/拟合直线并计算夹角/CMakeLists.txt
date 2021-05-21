@@ -20,5 +20,11 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 # )
 
 
-add_executable (01拟合直线 01拟合直线.cpp)
-target_link_libraries (01拟合直线 ${PCL_LIBRARIES}  ${OpenCV_LIBRARIES})
+# add_executable (01拟合直线 01拟合直线.cpp)
+# target_link_libraries (01拟合直线 ${PCL_LIBRARIES}  ${OpenCV_LIBRARIES})
+add_executable (00line_fit 00line_fit.cpp)
+target_link_libraries (00line_fit ${PCL_LIBRARIES}  ${OpenCV_LIBRARIES})
+
+
+
+

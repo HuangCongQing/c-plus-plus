@@ -58,6 +58,7 @@
         "list": "cpp",
         "condition_variable": "cpp",
         "mutex": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "random": "cpp"
     }
 }
