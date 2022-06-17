@@ -3,8 +3,8 @@
  * @Author: HCQ
  * @Company(School): UCAS
  * @Date: 2020-09-18 10:46:13
- * @LastEditors: HCQ
- * @LastEditTime: 2020-09-18 10:51:55
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-06-17 22:49:50
  */
 #include <iostream>
 #include <string>
@@ -28,9 +28,10 @@ public:
         age = a;
         cout << "有参构造函数!" << endl;
     }
-    //拷贝构造函数
+    //拷贝构造函数=======================================
     Person(const Person &p)
     {
+        // 可以直接调用p有的属性
         age = p.age;
         cout << "拷贝构造函数!" << endl;
     }
@@ -55,7 +56,7 @@ void test02()
     //2.1  括号法，常用
     Person p1(10);
     //注意1：调用无参构造函数不能加括号，如果加了编译器认为这是一个函数声明
-    //Person p2();
+    //Person p2(); 
     //2.2 显式法
     Person p2 = Person(10);
     Person p3 = Person(p2);// 拷贝构造
