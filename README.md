@@ -3,8 +3,8 @@
  * @Author: HCQ
  * @Company(School): UCAS
  * @Date: 2019-12-17 23:38:10
- * @LastEditors: HCQ
- * @LastEditTime: 2020-09-16 18:19:11
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-06-17 22:03:29
  -->
 
 # c-plus-plus
@@ -34,7 +34,13 @@ C++ 完全支持面向对象的程序设计，包括面向对象开发的四大�
 * [part1基础](part1基础)
 * [part1实战通讯录管理系统](part1实战通讯录管理系统)
 * [part2核心编程](part2核心编程)
+    * [封装继承多态](part2核心编程/04类和对象)
 * [part2实战-基于多态的企业职工系统](part2实战-基于多态的企业职工系统)
+
+
+### 设计模式DP
+
+* [DP设计模式](DP设计模式)
 
 ### C++ 库
 
