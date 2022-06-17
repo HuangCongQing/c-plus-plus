@@ -3,8 +3,8 @@
  * @Author: HCQ
  * @Company(School): UCAS
  * @Date: 2020-09-18 20:23:35
- * @LastEditors: HCQ
- * @LastEditTime: 2020-09-18 20:31:24
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-06-17 23:04:52
  */
 #include <iostream>
 #include <string>
@@ -28,6 +28,7 @@ public:
 private:
     string m_BedRoom; //卧室
 };
+
 void goodGay(Building *building)
 {
     cout << "好基友正在访问： " << building->m_SittingRoom << endl;

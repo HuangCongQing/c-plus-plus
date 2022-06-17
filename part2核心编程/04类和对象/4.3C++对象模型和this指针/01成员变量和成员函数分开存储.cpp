@@ -1,10 +1,10 @@
 /*
- * @Description: 
+ * @Description: 在C++中，类内的成员变量和成员函数分开存储 https://www.yuque.com/huangzhongqing/lang/wixs4k#sR4hh
  * @Author: HCQ
  * @Company(School): UCAS
  * @Date: 2020-09-18 18:20:28
- * @LastEditors: HCQ
- * @LastEditTime: 2020-09-18 19:00:24
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-06-17 22:57:04
  */
 #include <iostream>
 #include <string>

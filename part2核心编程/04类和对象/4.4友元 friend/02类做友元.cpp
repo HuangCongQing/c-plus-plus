@@ -3,8 +3,8 @@
  * @Author: HCQ
  * @Company(School): UCAS
  * @Date: 2020-09-18 20:23:52
- * @LastEditors: HCQ
- * @LastEditTime: 2020-09-18 21:12:56
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-06-17 23:06:00
  */
 #include <iostream>
 #include <string>
@@ -12,6 +12,7 @@
 using namespace std;
 
 class Building;
+// 
 class goodGay
 {
 public:
@@ -21,6 +22,8 @@ public:
 private:
     Building *building;
 };
+
+// 
 class Building
 {
     //告诉编译器 goodGay类是Building类的好朋友，可以访问到Building类中私有内容

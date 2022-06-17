@@ -1,10 +1,10 @@
 /*
- * @Description: 
+ * @Description:  这一块代码是如何区分那个对象调用自己的呢？用过this https://www.yuque.com/huangzhongqing/lang/wixs4k#sR4hh
  * @Author: HCQ
  * @Company(School): UCAS
  * @Date: 2020-09-18 19:10:36
- * @LastEditors: HCQ
- * @LastEditTime: 2020-09-18 19:16:32
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-06-17 22:59:09
  */
 #include <iostream>
 #include <string>
