@@ -1,10 +1,13 @@
 /*
- * @Description: 
+ * @Description: 继承方式一共有三种：
+● 公共继承：
+● 保护继承: 父类中的public和protected，子类中都为protected
+● 私有继承: 父类中的public和protected，子类中都为private
  * @Author: HCQ
  * @Company(School): UCAS
  * @Date: 2020-09-19 19:16:35
- * @LastEditors: HCQ
- * @LastEditTime: 2020-09-19 19:55:50
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-06-17 23:19:55
  */
 #include <iostream>
 #include <string>
@@ -21,6 +24,7 @@ protected:
 private:
     int m_C;
 };
+
 //公共继承
 class Son1 : public Base1
 {
@@ -37,6 +41,7 @@ void myClass()
     Son1 s1;
     s1.m_A; //其他类只能访问到公共权限
 }
+
 //保护继承
 class Base2
 {
@@ -64,6 +69,7 @@ void myClass2()
     Son2 s;
     //s.m_A; //不可访问
 }
+
 //私有继承
 class Base3
 {

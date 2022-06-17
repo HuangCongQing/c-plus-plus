@@ -1,13 +1,17 @@
 /*
- * @Description: 
+ * @Description: 用继承的技术，减少重复代码  https://www.yuque.com/huangzhongqing/lang/wixs4k#KLGvK
  * @Author: HCQ
  * @Company(School): UCAS
  * @Date: 2020-09-19 18:54:04
- * @LastEditors: HCQ
- * @LastEditTime: 2020-09-19 19:00:47
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-06-17 23:10:53
  */
 #include <iostream>
 #include <string>
+
+// class A : public B;
+// A 类称为子类 或 派生类
+// B 类称为父类 或 基类
 
 using namespace std;
 

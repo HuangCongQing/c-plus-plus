@@ -1,10 +1,10 @@
 /*
- * @Description: 
+ * @Description: 继承中的对象模型
  * @Author: HCQ
  * @Company(School): UCAS
  * @Date: 2020-09-19 19:57:43
- * @LastEditors: HCQ
- * @LastEditTime: 2020-09-19 20:00:09
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-06-17 23:13:18
  */
 #include <iostream>
 #include <string>
