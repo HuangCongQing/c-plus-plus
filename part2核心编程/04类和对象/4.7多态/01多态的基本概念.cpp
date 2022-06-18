@@ -1,10 +1,13 @@
 /*
- * @Description: 
+ * @Description: 函数前面加上virtual关键字，变成虚函数，那么编译器在编译的时候就不能确定函数调用了。
+//我们希望传入什么对象，那么就调用什么对象的函数
+//如果函数地址在编译阶段就能确定，那么静态联编
+//如果函数地址在运行阶段才能确定，就是动态联编
  * @Author: HCQ
  * @Company(School): UCAS
  * @Date: 2020-09-19 20:06:51
- * @LastEditors: HCQ
- * @LastEditTime: 2020-09-19 20:07:24
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-06-18 12:51:28
  */
 #include <iostream>
 #include <string>
