@@ -4,11 +4,11 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2022-06-20 11:01:03
- * @LastEditTime: 2022-06-20 11:04:49
+ * @LastEditTime: 2022-06-20 11:36:52
  * @FilePath: \c-plus-plus\DP设计模式\01工厂方法.cpp
  */
 
-// 1.1 定义
+// 1.1 定义:工厂方法：每种产品对应一个具体工厂，每个具体工厂负责生产对应的具体产品；
 // 工厂方法模式（Factory Method Pattern）又叫虚拟构造函数（Virtual Constructor）模式或者多态性工厂（PolymorphicFactory）模式。
 // 工厂方法模式的用意是定义一个创建产品对象的工厂接口，将实际创建性工作推迟到子类中，即定义一个用于创建对象的接口，让子类决定实例化哪个类。工厂方法使一个类的实例化延迟到其子类。
 // 1.2 缺点
