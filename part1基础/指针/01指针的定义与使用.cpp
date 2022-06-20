@@ -3,8 +3,8 @@
  * @Author: HCQ
  * @Company(School): UCAS
  * @Date: 2020-06-02 23:58:42
- * @LastEditors: HCQ
- * @LastEditTime: 2020-06-02 23:59:07
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-06-20 15:49:15
  */
 
 #include <iostream>
@@ -22,12 +22,12 @@ int main()
 
     //指针变量赋值
     p = &a;             //指针指向变量a的地址
-    cout << &a << endl; //打印数据a的地址
-    cout << p << endl;  //打印指针变量p
+    cout << &a << endl; //打印数据a的地址  0x7ffed5b416ac
+    cout << p << endl;  //打印指针变量p  0x7ffed5b416ac
 
     //2、指针的使用
     //通过*操作指针变量指向的内存
-    cout << "*p = " << *p << endl;
+    cout << "*p = " << *p << endl; // *p = 10
 
     system("pause");
 
