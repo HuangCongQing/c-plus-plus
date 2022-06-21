@@ -1,12 +1,13 @@
 /*
  * @Description: https://github.com/haotianmichael/algorithm/blob/master/C%2B%2B/src/C++ConCurrency/thread_mutex.cpp
+ 编译命令：
  cd "/home/hcq/github/c-plus-plus/并发与多线程/" && g++  -pthread thread_mutex.cpp -o thread_mutex && "/home/hcq/github/c-plus-plus/并发与多线程/"thread_mutex
  添加参数： -pthread
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2022-06-20 18:32:24
- * @LastEditTime: 2022-06-20 19:36:23
+ * @LastEditTime: 2022-06-21 10:10:03
  * @FilePath: /c-plus-plus/并发与多线程/thread_mutex.cpp
  */
 
