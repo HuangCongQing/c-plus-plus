@@ -4,8 +4,8 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2021-04-17 11:24:57
- * @LastEditTime: 2022-06-18 20:01:33
- * @FilePath: \c-plus-plus\part2核心编程\04类和对象\4.7多态\03纯虚函数和抽象类.cpp
+ * @LastEditTime: 2022-06-21 11:41:25
+ * @FilePath: /c-plus-plus/part2核心编程/04类和对象/4.7多态/03纯虚函数和抽象类.cpp
  */
 #include<iostream>  
 using namespace std;
@@ -31,11 +31,11 @@ virtual void func()
 
 void test01()
 {
- Base * base = NULL;
+ Base * base1 = NULL;
 //base = new Base; // 错误，抽象类无法实例化对象
- base = new Son;
- base->func();
-delete base;//记得销毁
+ base1 = new Son;  // new的什么class类型(base)就用什么class数据类型（base）接受他
+ base1->func();
+delete base1;//记得销毁
 }
 
 int main() {
