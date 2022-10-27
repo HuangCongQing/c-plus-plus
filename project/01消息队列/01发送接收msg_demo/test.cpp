@@ -1,11 +1,11 @@
 /*
- * @Description: 
+ * @Description:  msgrcv
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2022-10-27 23:08:22
- * @LastEditTime: 2022-10-27 23:08:38
- * @FilePath: /c-plus-plus/project/01消息队列/01demo/test.cpp
+ * @LastEditTime: 2022-10-27 23:59:01
+ * @FilePath: /c-plus-plus/project/01消息队列/01发送接收msg_demo/test.cpp
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -44,11 +44,12 @@ int main()
             fprintf(stderr, "msgrcv failed with errno: %d\n", errno);
             exit(EXIT_FAILURE);
         }
- 
+        
+        // 接收到的消息some_data
         printf("You wrote: %s", some_data.some_text);
         if(strncmp(some_data.some_text, "end", 3)==0)
         {
-            running = 0;
+            running = 0; // 设置0就退出循环
         }
     }
     if(msgctl(msgid, IPC_RMID, 0)==-1) // 删除消息队列
