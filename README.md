@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Date: 2019-12-17 23:38:10
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-10-27 23:16:41
+ * @LastEditTime: 2022-10-30 12:35:20
  -->
 
 # c-plus-plus
@@ -38,13 +38,27 @@ C++ 完全支持面向对象的程序设计，包括面向对象开发的四大�
 * [part2实战-基于多态的企业职工系统](part2实战-基于多态的企业职工系统)
 
 
+### 基础知识
+
+#### 1 socket
+* [project/01消息队列socket](project/01消息队列socket)
+
+#### 2 多线程多进程
+
+
+
+#### 3 IO
+
+
+
+
 ### 设计模式DP
 
 * [DP设计模式](DP设计模式)
 
 ### C++ 库
 
-#### Eigen
+#### 1Eigen
 
 * [Eigen](Eigen)
 
