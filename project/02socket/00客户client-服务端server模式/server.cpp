@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2022-10-31 00:06:17
- * @LastEditTime: 2022-10-31 00:06:42
+ * @LastEditTime: 2022-10-31 00:26:41
  * @FilePath: /c-plus-plus/project/02socket/00客户client-服务端server模式/server.cpp
  */
 /*
@@ -42,15 +42,19 @@ int main(int argc,char *argv[])
   { perror("bind"); close(listenfd); return -1; }
  
   // 第3步：把socket设置为监听模式。
-  if (listen(listenfd,5) != 0 ) { perror("listen"); close(listenfd); return -1; }
- 
+  if (listen(listenfd,5) != 0 ) { 
+    perror("listen"); 
+    close(listenfd); 
+    return -1;
+  }
+
+  //======================上面服务端(listenfd)设置，下面客户端（clientfd）设置======================================================
   // 第4步：接受客户端的连接。
   int  clientfd;                  // 客户端的socket。
   int  socklen=sizeof(struct sockaddr_in); // struct sockaddr_in的大小
   struct sockaddr_in clientaddr;  // 客户端的地址信息。
-  clientfd=accept(listenfd,(struct sockaddr *)&clientaddr,(socklen_t*)&socklen);
+  clientfd=accept(listenfd,(struct sockaddr *)&clientaddr,(socklen_t*)&socklen); //  调用accept阻塞，等待客户端连接。
   printf("客户端（%s）已连接。\n",inet_ntoa(clientaddr.sin_addr));
- 
   // 第5步：与客户端通信，接收客户端发过来的报文后，回复ok。
   char buffer[1024];
   while (1)
@@ -70,5 +74,6 @@ int main(int argc,char *argv[])
   }
  
   // 第6步：关闭socket，释放资源。
-  close(listenfd); close(clientfd);
+  close(listenfd); 
+  close(clientfd);
 }
