@@ -4,8 +4,8 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2022-11-03 00:08:50
- * @LastEditTime: 2022-11-03 00:09:00
- * @FilePath: /c-plus-plus/project/02socket/01并发的服务端/book249.cpp
+ * @LastEditTime: 2022-11-03 01:46:50
+ * @FilePath: /c-plus-plus/project/02socket/01并发的服务端/cilent_book249.cpp
  */
 
 /*
@@ -37,14 +37,15 @@ public:
  
  ~CTcpClient();
 };
- 
+
+// main入口
 int main()
 {
   CTcpClient TcpClient;
  
   // 向服务器发起连接请求
-  if (TcpClient.ConnectToServer("172.16.0.15",5051)==false)
-  { printf("TcpClient.ConnectToServer(\"172.16.0.15\",5051) failed,exit...\n"); return -1; }
+  if (TcpClient.ConnectToServer("127.0.0.1",5051)==false)
+  { printf("TcpClient.ConnectToServer(\"127.0.0.1\",5051) failed,exit...\n"); return -1; }
  
   char strbuffer[1024];
  

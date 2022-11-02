@@ -4,8 +4,8 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2022-11-03 00:08:50
- * @LastEditTime: 2022-11-03 00:09:35
- * @FilePath: /c-plus-plus/project/02socket/01并发的服务端/book250.cpp
+ * @LastEditTime: 2022-11-03 00:15:54
+ * @FilePath: /c-plus-plus/project/02socket/01并发的服务端/server_book250.cpp
  */
 
 
@@ -45,7 +45,8 @@ public:
 };
  
 CTcpServer TcpServer;
- 
+
+// main入口
 int main()
 {
   // signal(SIGCHLD,SIG_IGN);  // 忽略子进程退出的信号，避免产生僵尸进程
@@ -55,7 +56,7 @@ int main()
  
   while (1)
   {
-    if (TcpServer.Accept() == false) continue;
+    if (TcpServer.Accept() == false) continue; // accept失败，重新accept
  
     if (fork()>0) { TcpServer.CloseClient(); continue; }  // 父进程回到while，继续Accept。
  
