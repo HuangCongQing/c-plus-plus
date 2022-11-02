@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2022-10-31 00:06:17
- * @LastEditTime: 2022-10-31 00:26:41
+ * @LastEditTime: 2022-11-02 22:37:14
  * @FilePath: /c-plus-plus/project/02socket/00客户client-服务端server模式/server.cpp
  */
 /*
@@ -53,6 +53,7 @@ int main(int argc,char *argv[])
   int  clientfd;                  // 客户端的socket。
   int  socklen=sizeof(struct sockaddr_in); // struct sockaddr_in的大小
   struct sockaddr_in clientaddr;  // 客户端的地址信息。
+  // accept会一直阻塞直到接收到客户端信息
   clientfd=accept(listenfd,(struct sockaddr *)&clientaddr,(socklen_t*)&socklen); //  调用accept阻塞，等待客户端连接。
   printf("客户端（%s）已连接。\n",inet_ntoa(clientaddr.sin_addr));
   // 第5步：与客户端通信，接收客户端发过来的报文后，回复ok。

@@ -1,10 +1,10 @@
 /*
- * @Description: https://www.yuque.com/huangzhongqing/lang/tyaota#yPd76
+ * @Description:  运行：./client 127.0.0.1 5005  https://www.yuque.com/huangzhongqing/lang/tyaota#yPd76
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2022-10-31 00:06:29
- * @LastEditTime: 2022-10-31 00:06:50
+ * @LastEditTime: 2022-11-02 22:20:43
  * @FilePath: /c-plus-plus/project/02socket/00客户client-服务端server模式/client.cpp
  */
 /*
@@ -29,7 +29,10 @@ int main(int argc,char *argv[])
  
   // 第1步：创建客户端的socket。
   int sockfd;
-  if ( (sockfd = socket(AF_INET,SOCK_STREAM,0))==-1) { perror("socket"); return -1; }
+  if ( (sockfd = socket(AF_INET,SOCK_STREAM,0))==-1) { 
+    perror("socket"); 
+    return -1; 
+  }
  
   // 第2步：向服务器发起连接请求。
   struct hostent* h;
