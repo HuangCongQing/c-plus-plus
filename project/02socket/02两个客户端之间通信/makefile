@@ -1,7 +1,7 @@
 all:client server
 
-client:client.cpp
-	g++ -g -o client client.cpp -lpthread
+client:client1.cpp
+	g++ -g -o client client1.cpp -lpthread
 
-server:server.cpp
-	g++ -g -o server server.cpp -lpthread
+server:server1.cpp
+	g++ -g -o server server1.cpp -lpthread
