@@ -1738,7 +1738,7 @@ bool RENAME(const char *srcfilename,const char *dstfilename,const int times)
   return false;
 }
 
-
+// CTcpClient定义》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》
 CTcpClient::CTcpClient()
 {
   m_sockfd=-1;
@@ -1793,7 +1793,7 @@ bool CTcpClient::Read(char *buffer,const int itimeout)
 
     m_btimeout = false;
 
-    int i;
+    int i; // select超时不阻塞
     if ( (i = select(m_sockfd+1,&tmpfd,0,0,&timeout)) <= 0 )
     {
       if (i==0) m_btimeout = true;
@@ -1848,6 +1848,7 @@ CTcpClient::~CTcpClient()
   Close();
 }
 
+// CTcpServer的实现》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》》。
 CTcpServer::CTcpServer()
 {
   m_listenfd=-1;
