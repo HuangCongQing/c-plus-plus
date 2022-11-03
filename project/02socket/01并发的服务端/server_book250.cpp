@@ -4,7 +4,7 @@
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2022-11-03 00:08:50
- * @LastEditTime: 2022-11-03 00:15:54
+ * @LastEditTime: 2022-11-03 22:31:37
  * @FilePath: /c-plus-plus/project/02socket/01并发的服务端/server_book250.cpp
  */
 
@@ -20,6 +20,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
+#include <signal.h> // signal
  
 class CTcpServer
 {
@@ -49,7 +50,7 @@ CTcpServer TcpServer;
 // main入口
 int main()
 {
-  // signal(SIGCHLD,SIG_IGN);  // 忽略子进程退出的信号，避免产生僵尸进程
+  signal(SIGCHLD,SIG_IGN);  // 忽略子进程退出的信号，避免产生僵尸进程
  
   if (TcpServer.InitServer(5051)==false)
   { printf("服务端初始化失败，程序退出。\n"); return -1; }
@@ -57,17 +58,21 @@ int main()
   while (1)
   {
     if (TcpServer.Accept() == false) continue; // accept失败，重新accept
+
+    // 如果是父进程：关闭Client,continue
+    if (fork()>0) { 
+      TcpServer.CloseClient(); 
+      continue; }  // 父进程回到while，继续Accept。
  
-    if (fork()>0) { TcpServer.CloseClient(); continue; }  // 父进程回到while，继续Accept。
- 
-    // 子进程负责与客户端进行通信，直到客户端断开连接。
+    // 子进程只负责与客户端进行通信，直到客户端断开连接。
     TcpServer.CloseListen();
  
     printf("客户端已连接。\n");
  
     // 与客户端通信，接收客户端发过来的报文后，回复ok。
     char strbuffer[1024];
- 
+
+    // 注意，服务端book250的主程序的while是一个死循环，没有退出机制，可以按Ctrl+c强制中止它，这不是正确的办法，后面我会介绍正确的方法。
     while (1)
     {
       memset(strbuffer,0,sizeof(strbuffer));
@@ -80,7 +85,8 @@ int main()
     }
  
     printf("客户端已断开连接。\n");
- 
+
+    // 4）子进程执行完任务后，要调用retrun或exit(0)退出，如果没有调用return或exit(0)，子进程将又会回到while循环首部。
     return 0;  // 或者exit(0)，子进程退出。
   }
 }
@@ -136,11 +142,13 @@ int CTcpServer::Recv(void *buf,const int buflen)
   return recv(m_clientfd,buf,buflen,0);
 }
  
+// 父进程不需要和子进程通信，所以要关掉
 void CTcpServer::CloseClient()    // 关闭客户端的socket
 {
   if (m_clientfd!=0) { close(m_clientfd); m_clientfd=0; }
 }
- 
+
+// 
 void CTcpServer::CloseListen()    // 关闭用于监听的socket
 {
   if (m_listenfd!=0) { close(m_listenfd); m_listenfd=0; }
