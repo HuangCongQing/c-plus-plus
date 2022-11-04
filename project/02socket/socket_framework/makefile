@@ -6,11 +6,11 @@ client:client.cpp
 server:server.cpp
 	g++ -g -o server server.cpp
 
-# 客户端
+# 客户端   ./01client_base_framework 127.0.0.1  5005
 01client_base_framework:01client_base_framework.cpp
 	g++ -g -o 01client_base_framework 01client_base_framework.cpp _freecplus.cpp
 
-# 服务端
+# 服务端   ./01server_base_framework 5005
 01server_base_framework:01server_base_framework.cpp
 	g++ -g -o 01server_base_framework 01server_base_framework.cpp _freecplus.cpp
 
