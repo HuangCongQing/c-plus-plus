@@ -20,11 +20,11 @@ server:server.cpp
 mpserver:mpserver.cpp
 	g++ -g -o mpserver mpserver.cpp _freecplus.cpp
 
-#  业务示例 client
+#  业务示例 client   ./demo47_biz 127.0.0.1 5005
 demo47_biz:demo47_biz.cpp
 	g++ -g -o demo47_biz demo47_biz.cpp _freecplus.cpp
 
-# 多进程server
+# 多进程server  ./mpserver_biz 5005 /tmp/mpserver_biz.log
 mpserver_biz:mpserver_biz.cpp
 	g++ -g -o mpserver_biz mpserver_biz.cpp _freecplus.cpp
 
@@ -32,7 +32,7 @@ mpserver_biz:mpserver_biz.cpp
 mtserver_biz:mtserver_biz.cpp
 	g++ -g -o mtserver_biz mtserver_biz.cpp _freecplus.cpp -lpthread
 
-# 增加了业务示例和计时功能 client
+# 增加了业务示例和计时功能 client   ./demo47_timer 127.0.0.1 5005
 demo47_timer:demo47_timer.cpp
 	g++ -g -o demo47_timer demo47_timer.cpp _freecplus.cpp
 
