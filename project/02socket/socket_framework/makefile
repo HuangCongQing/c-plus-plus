@@ -6,11 +6,13 @@ client:client.cpp
 server:server.cpp
 	g++ -g -o server server.cpp
 
-demo47:demo47.cpp
-	g++ -g -o demo47 demo47.cpp _freecplus.cpp
+# 客户端
+01client_base_framework:01client_base_framework.cpp
+	g++ -g -o 01client_base_framework 01client_base_framework.cpp _freecplus.cpp
 
-demo48:demo48.cpp
-	g++ -g -o demo48 demo48.cpp _freecplus.cpp
+# 服务端
+01server_base_framework:01server_base_framework.cpp
+	g++ -g -o 01server_base_framework 01server_base_framework.cpp _freecplus.cpp
 
 mpserver:mpserver.cpp
 	g++ -g -o mpserver mpserver.cpp _freecplus.cpp
