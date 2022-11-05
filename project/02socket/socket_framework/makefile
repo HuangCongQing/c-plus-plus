@@ -1,4 +1,5 @@
-all:client server 01client_base_framework 01server_base_framework mpserver demo47_biz mpserver_biz mtserver_biz demo47_timer
+all: 02client_timer 02mpserver_biz
+# client server 01client_base_framework 01server_base_framework mpserver demo47_biz mpserver_biz mtserver_biz demo47_timer
 
 # base  无封装
 client:client.cpp
@@ -8,13 +9,22 @@ client:client.cpp
 server:server.cpp
 	g++ -g -o server server.cpp
 
-# 客户端   ./01client_base_framework 127.0.0.1  5005
+# 01客户端   ./01client_base_framework 127.0.0.1  5005
 01client_base_framework:01client_base_framework.cpp
 	g++ -g -o 01client_base_framework 01client_base_framework.cpp _freecplus.cpp
 
-# 服务端   ./01server_base_framework 5005
+# 01服务端   ./02client_timer 5005
 01server_base_framework:01server_base_framework.cpp
 	g++ -g -o 01server_base_framework 01server_base_framework.cpp _freecplus.cpp
+
+
+# 02客户端   ./01client_base_framework 127.0.0.1  5005
+02client_timer:02client_timer.cpp
+	g++ -g -o 02client_timer 02client_timer.cpp _freecplus.cpp
+
+# 02服务端   ./02mpserver_biz 5005
+02mpserver_biz:02mpserver_biz.cpp
+	g++ -g -o 02mpserver_biz 02mpserver_biz.cpp _freecplus.cpp
 
 # 多进程server
 mpserver:mpserver.cpp
@@ -38,4 +48,4 @@ demo47_timer:demo47_timer.cpp
 
 # 删除编译文件
 clean:
-	rm -rf client server 01client_base_framework 01server_base_framework mpserver demo47_biz mpserver_biz mtserver_biz demo47_timer
+	rm -rf client server 02client_timer 02mpserver_biz 01client_base_framework 01server_base_framework mpserver demo47_biz mpserver_biz mtserver_biz demo47_timer

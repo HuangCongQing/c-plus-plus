@@ -146,6 +146,7 @@ bool _main(const char *strrecvbuffer,char *strsendbuffer)  // 处理业务的主
 {
   int ibizcode=-1;
   GetXMLBuffer(strrecvbuffer,"bizcode",&ibizcode);
+  printf("-----code:%d", ibizcode);
 
   switch (ibizcode)
   {

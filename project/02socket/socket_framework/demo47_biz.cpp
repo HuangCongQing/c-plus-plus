@@ -39,11 +39,12 @@ int main(int argc,char *argv[])
   biz002(); // 余额查询
   */
 
+  // for循环10次，每次sleep1秒
   for (int ii=0;ii<10;ii++)
   {
     if (biz000()==false) break;
 
-    sleep(10);
+    sleep(1);
   }
 
   // 程序直接退出，析构函数会释放资源。
@@ -103,12 +104,12 @@ bool biz000()  // 发送心跳报文。
  
   memset(strbuffer,0,sizeof(strbuffer));
   snprintf(strbuffer,1000,"<bizcode>0</bizcode>");
-  //printf("发送：%s\n",strbuffer);
+  printf("发送：%s\n",strbuffer);
   if (TcpClient.Write(strbuffer)==false) return false;    // 向服务端发送请求报文。
  
   memset(strbuffer,0,sizeof(strbuffer));
   if (TcpClient.Read(strbuffer,20)==false) return false;  // 接收服务端的回应报文。
-  //printf("接收：%s\n",strbuffer);
+  printf("接收：%s\n",strbuffer);
 
   return true;
 }
