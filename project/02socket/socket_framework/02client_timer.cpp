@@ -14,15 +14,15 @@ bool biz002();  // 余额查询
 
 int main(int argc,char *argv[])
 {
-  if (argc!=3)
-  {
-    printf("Using:./demo47_biz ip port\nExample:./demo47_biz 172.21.0.3 5005\n\n"); return -1;
-  }
+  // if (argc!=3)
+  // {
+  //   printf("Using:./demo47_biz ip port\nExample:./demo47_biz 172.21.0.3 5005\n\n"); return -1;
+  // }
 
   CTimer Timer;
-  if (TcpClient.ConnectToServer(argv[1],atoi(argv[2]))==false) // 向服务端发起连接请求。
+  if (TcpClient.ConnectToServer("127.0.0.1",5005)==false) // 向服务端发起连接请求。
   {
-    printf("TcpClient.ConnectToServer(\"%s\",%s) failed.\n",argv[1],argv[2]); return -1;
+    printf("TcpClient.ConnectToServer 127.0.0.1,5051failed.\n"); return -1;
   }
   printf("TcpClient.ConnectToServer() 耗时%lf\n",Timer.Elapsed());
 
