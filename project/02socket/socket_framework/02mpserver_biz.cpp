@@ -6,7 +6,6 @@
 #include "_freecplus.h"
 using namespace std;
  
-// CLogFile logfile;
 CTcpServer TcpServer;   // 创建服务端对象。
 
 // 程序退出时调用的函数
@@ -27,16 +26,9 @@ bool biz002(const char *strrecvbuffer,char *strsendbuffer);
 
 int main(int argc,char *argv[])
 {
-  // if (argc!=3)
-  // {
-  //   printf("Using:./mpserver_biz port logfile\nExample:./mpserver_biz 5005 /tmp/mpserver_biz.log\n\n"); return -1;
-  // }
-
+  
   // 关闭全部的信号
   for (int ii=0;ii<100;ii++) signal(ii,SIG_IGN);
-
-  // 打开日志文件。
-  // if (logfile.Open(argv[2],"a+")==false) { printf("logfile.Open(%s) failed.\n",argv[2]); return -1;}
 
   // 设置信号,在shell状态下可用 "kill + 进程号" 正常终止些进程
   // 但请不要用 "kill -9 +进程号" 强行终止
@@ -54,6 +46,7 @@ int main(int argc,char *argv[])
       printf("TcpServer.Accept() failed.\n"); continue;
     }
 
+    // 父进程
     if (fork()>0) { TcpServer.CloseClient(); continue; } // 父进程返回到循环首部。
 
     // 子进程重新设置退出信号。
@@ -74,7 +67,7 @@ int main(int argc,char *argv[])
       if (TcpServer.Read(strrecvbuffer,30)==false) break; // 接收客户端发过来的请求报文。
       printf("接收：%s\n",strrecvbuffer);
 
-      // 处理业务的主函数。
+      // 处理业务的主函数。<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
       if (_main(strrecvbuffer,strsendbuffer)==false) ChldEXIT(-1); 
  
       printf("发送：%s\n",strsendbuffer);
@@ -85,7 +78,7 @@ int main(int argc,char *argv[])
 
     ChldEXIT(-1);  // 通信完成后，子进程退出。
   }
-}
+}  // main函数结束
 
 // 父进程退出时调用的函数
 void FathEXIT(int sig)
@@ -125,7 +118,7 @@ void ChldEXIT(int sig)
 bool _main(const char *strrecvbuffer,char *strsendbuffer)  // 处理业务的主函数。
 {
   int ibizcode=-1;
-  GetXMLBuffer(strrecvbuffer,"bizcode",&ibizcode);
+  GetXMLBuffer(strrecvbuffer,"bizcode",&ibizcode); // 得到0/1/2 匹配 <bizcode>2</bizcode>
   printf("-----code:%d\n", ibizcode);
 
   switch (ibizcode)
