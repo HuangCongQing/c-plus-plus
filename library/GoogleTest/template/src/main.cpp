@@ -1,11 +1,11 @@
 /*
- * @Description: 
+ * @Description:  生成main可执行文件。运行./main --gtest_output=xml
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2023-03-02 14:56:32
- * @LastEditTime: 2023-03-02 16:35:45
- * @FilePath: /c-plus-plus/library/GoogleTest/01getst_demo/src/main.cpp
+ * @LastEditTime: 2023-03-02 16:40:41
+ * @FilePath: /c-plus-plus/library/GoogleTest/template/src/main.cpp
  */
 #include <iostream>
 #include <gtest/gtest.h>
@@ -54,5 +54,7 @@ TEST(testCase3, test){
 int main(int argc, char **argv) {
   printf("Running main() from %s\n", __FILE__);
   testing::InitGoogleTest(&argc, argv);
+  testing::GTEST_FLAG(output) = "xml:"; // 希望输出xml文件结果 生成main可执行文件。运行./main --gtest_output=xml
   return RUN_ALL_TESTS();   
 }
+// 生成main可执行文件。运行./main --gtest_output=xml
