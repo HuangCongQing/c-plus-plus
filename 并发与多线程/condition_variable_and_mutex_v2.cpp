@@ -1,10 +1,10 @@
 /*
- * @Description: 
+ * @Description: 有三个事件(每个事件耗时分别sleep0.3，0.2，0.1)，当第一个事件执行外之后才能执行第二个，第二个执行完才能执行完第三个
  * @Author: HCQ
  * @Company(School): UCAS
  * @Email: 1756260160@qq.com
  * @Date: 2024-04-12 16:16:56
- * @LastEditTime: 2024-04-12 16:42:50
+ * @LastEditTime: 2024-04-12 17:11:57
  * @FilePath: /c-plus-plus/并发与多线程/condition_variable_and_mutex_v2.cpp
  */
 //   -std=c++11  -pthread 

@@ -59,6 +59,12 @@
         "condition_variable": "cpp",
         "mutex": "cpp",
         "numeric": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "any": "cpp",
+        "bit": "cpp",
+        "forward_list": "cpp",
+        "unordered_set": "cpp",
+        "typeindex": "cpp",
+        "variant": "cpp"
     }
 }
