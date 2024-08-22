@@ -65,6 +65,7 @@
         "forward_list": "cpp",
         "unordered_set": "cpp",
         "typeindex": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "future": "cpp"
     }
 }
